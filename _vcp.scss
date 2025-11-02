@@ -1,0 +1,84 @@
+// _vcp.scss
+
+@use '../../../src/style/scss/module/base';
+
+$size-vcp: 30px;
+
+:root {
+    --size-vcp: #{$size-vcp};
+}
+
+.vcp {
+    display: none;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    z-index: 9999;
+
+    div:not(.drag-indicator, .orient-indicator, .resize-indicator) {
+        width: var(--size-vcp);
+        height: var(--size-vcp);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .drag-indicator {
+        $size: 5px;
+        position: absolute;
+        top: 0;
+        margin: 4px;
+        opacity: 0;
+        width: $size;
+        height: $size;
+        border-radius: 20px;
+    }
+
+    &:hover .drag-indicator,
+    &:hover .orient-indicator,
+    &:hover .resize-indicator {
+        opacity: 1;
+    }
+
+    .orient-indicator {
+        $size: 20px;
+        position: absolute;
+        top: -1.2rem;
+        right: -1.2rem;
+        opacity: 0;
+        width: $size;
+        height: $size;
+    }
+
+    .resize-indicator {
+        $size: 10px;
+        $position: -10px;
+        position: absolute;
+        bottom: $position;
+        left: $position;
+        opacity: 0;
+        width: $size;
+        height: $size;
+        border-radius: 50px 30px 0 30px;
+        /* Top-left     */
+        /* Top-right    */
+        /* Bottom-right */
+        /* Bottom-left  */
+        rotate: -90deg;
+    }
+
+    .vcp-buttons {
+        background-color: base.$color-765;
+        transition: base.$standard-animation;
+    }
+}
+
+.horizontal {
+    flex-direction: row;
+}
+
+.toggle {
+    display: flex;
+}
