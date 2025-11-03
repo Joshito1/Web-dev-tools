@@ -1,8 +1,8 @@
 /* 
     vcp.js
     description: Creates a Visual Color Palette on screen.
-    v1.5D103125
-    DM: 11125
+    v1.6D11225
+    DC: 103125
 */
 
 export const VCP = (() => {
@@ -50,6 +50,15 @@ export const VCP = (() => {
             panel.appendChild(swatch);
         });
         document.body.appendChild(panel);
+
+        // CSS Path Creation
+        const moduleUrl = import.meta.url;
+        const basePath = moduleUrl.substring(0, moduleUrl.lastIndexOf("/"));
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = `${basePath}/vcp.css`;
+        document.head.appendChild(link);
+        console.log("Loaded CSS from", link.href);
     }
 
 

@@ -1,0 +1,76 @@
+:root {
+    --size-vcp: 30px;
+}
+
+.vcp {
+    display: none;
+    flex-direction: column;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    z-index: 9999;
+}
+
+.vcp div:not(.drag-indicator, .orient-indicator, .resize-indicator) {
+    width: var(--size-vcp);
+    height: var(--size-vcp);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.vcp .drag-indicator {
+    position: absolute;
+    top: 0;
+    margin: 4px;
+    opacity: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 20px;
+}
+
+.vcp:hover .drag-indicator,
+.vcp:hover .orient-indicator,
+.vcp:hover .resize-indicator {
+    opacity: 1;
+}
+
+.vcp .orient-indicator {
+    position: absolute;
+    top: -1.2rem;
+    right: -1.2rem;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.vcp .resize-indicator {
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    opacity: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px 30px 0 30px;
+    /* Top-left     */
+    /* Top-right    */
+    /* Bottom-right */
+    /* Bottom-left  */
+    rotate: -90deg;
+}
+
+.vcp .vcp-buttons {
+    background-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+}
+
+.horizontal {
+    flex-direction: row;
+}
+
+.toggle {
+    display: flex;
+}

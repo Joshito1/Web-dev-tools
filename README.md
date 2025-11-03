@@ -3,8 +3,21 @@
 ## Why create VCPTool?
 When trying to choose a color, sometimes you may want to look back into your color palette file. Because one may forget which colors one has picked after a while of designing specific components in your webpage. But going back and forth may be time consuming. So by creating vcp tool, you may now have it beside you when designing and you can choose on the fly which color should be used on elements. So I present to you the plugin 'VCPTool'. It is a simple Tool to assist you in designing.
 
-
 ## User Manual:
+### Initializing
+Initialize by importing it into your main.js (Momentarily I'll have it like this. I have planned in creating central Dev modules).
+
+```js
+// main.js
+
+import { VCP } from 'path/to/vcp.js';
+
+// Inside any init function of your liking.
+(function() {
+    VCP.init();
+})();
+```
+
 ### Toggle:
 - Win/Linux: Alt + p
 - Mac: Command + p
@@ -43,8 +56,8 @@ $color-quaternary: #ffffffff;
     --color-quaternary: #{$color-quaternary};
 }
 ```
-<br><br><br>
-# Project Notes
+<br><br><br><br><br><br>
+# Project Development Notes
 ## Implement Goal:
 Type your prefered color pallete in styles and it exports to this JS file and displays color pallete on screen.
 
@@ -71,8 +84,9 @@ Create Divs with classes, 20x20px size and display on the center right.
 - Add config.json for adding more color support.
 - Fetch Color Palettes from webpages (More advanced, and out of path Idea. Came from creating a bookmarklet. This will display a visual of all colors being used on the webpage.)
 
+<br><br>
 # Acknowledgements:
 Remix Icon for its Icons.
 
-
-DM: 11/1/25
+<br><br><br>
+DM: 11/2/25
