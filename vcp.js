@@ -1,9 +1,14 @@
 /* 
     vcp.js
     description: Creates a Visual Color Palette on screen.
-    v1.6D11225
+    v1.6D111025
     DC: 103125
 */
+
+let loggingEnabled = false;
+function log(...args) {
+    if (loggingEnabled) console.log("[VCP]", ...args)
+}
 
 export const VCP = (() => {
     const altclass = 'vcp-buttons'
@@ -58,7 +63,7 @@ export const VCP = (() => {
         link.rel = "stylesheet";
         link.href = `${basePath}/vcp.css`;
         document.head.appendChild(link);
-        console.log("Loaded CSS from", link.href);
+        log("Loaded CSS from", link.href);
     }
 
 
